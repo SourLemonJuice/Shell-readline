@@ -13,22 +13,24 @@
 int main(int argc, char *argv[])
 {
     if (argc >= 2) {
-        fprintf(stdout, "Note: This program doesn't have any flags(for now)\n");
-        fprintf(stdout, "Usage: simple-readline\n\n");
-        fprintf(stdout, "The final user input will be printed to stderr, the readline interface will displayed on stdout.\n");
-        fprintf(stdout, "In bash, use \"simple-readline 2> >(cat -)\" to provide stdin to another command.\n");
-        fprintf(stdout, "Also can use \"input=$(./simple-readline 1> $(tty))\" to write input to a variable.\n\n");
-        fprintf(stdout, "If any arguments are entered, this help message will be displayed.\n");
+        fprintf(stderr, "Note: This program doesn't have any flags(for now)\n");
+        fprintf(stderr, "Usage: simple-readline\n\n");
+        fprintf(stderr, "The final user input will be printed to stdout, the readline interface will displayed on stderr.\n");
+        fprintf(stderr, "In bash, use \"simple-readline | cat -\" to provide stdin to another command.\n");
+        fprintf(stderr, "Also can use \"input=$(simple-readline)\" to write input to a variable.\n");
+        fprintf(stderr, "Bash's Command Substitution and Pipe only use stdout stream, remember this when writing script.\n\n");
+        fprintf(stderr, "If any arguments are entered, this help message will be displayed.\n");
         exit(EXIT_FAILURE);
     }
 
+    rl_outstream = stderr;
     char *input = readline("");
 
     if (input != NULL) {
-        fprintf(stderr, "%s", input);
+        fprintf(stdout, "%s\n", input);
         free(input);
     } else {
-        fprintf(stderr, "[simple-readline: Unknown error, input string is NULL]");
+        fprintf(stdout, "[simple-readline: Unknown error, input string is NULL]\n");
         exit(EXIT_FAILURE);
     }
 
