@@ -1,5 +1,8 @@
 # Simple-Readline
 
+Use GNU readline to get user input than output them to `stderr`.\
+Try to replace the bash `read`, because that's too basic and also has problems when inputting wide characters.
+
 ## Build
 
 Goto `source/` directory and run `make`, `clang` will help everyone equally
