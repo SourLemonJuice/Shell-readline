@@ -1,4 +1,4 @@
-# Simple-Readline
+# Shell-readline
 
 Use GNU readline to get user input than output them to `stdout`.\
 Try to replace the bash `read`, because that's too basic and also has problems when inputting wide characters.
@@ -9,7 +9,7 @@ Goto `source/` directory and run `make`, `clang` will help everyone equally
 
 ## Usage
 
-Run `./simple-readline help` to get help
+Run `./shell-readline help` to get help
 
 ```text
 Note: This program doesn't have any flags(for now)

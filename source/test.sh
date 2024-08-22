@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-input=$(./simple-readline)
+input=$(./shell-readline)
 echo "variable-${input}-variable"

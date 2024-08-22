@@ -1,9 +1,14 @@
 clang_flag += -std=gnu17
 clang_flag += -lreadline
 
-default: simple-readline
+exec_name := shell-readline
 
-simple-readline: main.c GNUmakefile
+default: ${exec_name}
+
+${exec_name}: main.c GNUmakefile
 	clang main.c \
-		--output simple-readline \
+		--output ${exec_name} \
 		${clang_flag}
+
+clean:
+	rm -i ./${exec_name}*
