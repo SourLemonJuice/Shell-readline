@@ -28,3 +28,7 @@ If any arguments are entered, this help message will be displayed.
 - [An answer of StackOverflow: How to store standard error in a variable](https://stackoverflow.com/a/963857/25416550)
 - [source/test.sh](source/test.sh) in this repository
 - <https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html>
+
+## License
+
+Published under MIT license
